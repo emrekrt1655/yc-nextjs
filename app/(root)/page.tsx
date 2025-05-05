@@ -1,10 +1,14 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-   
-   <div className="text-3xl">
-    Home
-   </div>
+    <>
+      <section className="pink_container">
+        <h1 className="heading">
+          Pitch Your Startup, Connect with Entrepreneurs <br />{" "}
+        </h1>
+        <p className="sub-heading !max-w-3xl">
+          Submit Ideas, Vote on Pitches, and Get Noticed in Virtual Competitions{" "}
+        </p>
+      </section>
+    </>
   );
 }
