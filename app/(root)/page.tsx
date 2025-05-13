@@ -1,16 +1,17 @@
-import StartupCard, {StartupCardType} from "@/components/StartupCard";
+import StartupCard, { StartupCardType } from "@/components/StartupCard";
 import SearchForm from "../../components/SearchForm";
 import { STARTUPS_QUERY } from "@/sanity/lib/queries";
 import { sanityFetch, SanityLive } from "@/sanity/lib/live";
 
 export default async function Home({
-  searchParams, 
+  searchParams,
 }: {
   searchParams: Promise<{ query?: string }>;
 }) {
   const query = (await searchParams).query;
+  const params = { search: query || null };
 
-  const {data: posts} = await sanityFetch({query: STARTUPS_QUERY})
+  const { data: posts } = await sanityFetch({ query: STARTUPS_QUERY, params });
 
   return (
     <>
@@ -36,7 +37,7 @@ export default async function Home({
             : "There is no post"}
         </ul>
       </section>
-      <SanityLive/>
+      <SanityLive />
     </>
   );
 }
