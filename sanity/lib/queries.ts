@@ -26,6 +26,7 @@ export const STARTUPS_BY_ID_QUERY = `
     views,
     description,
     category,
-    image
+    image,
+    pitch
   }
 `;
